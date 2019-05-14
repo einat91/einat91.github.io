@@ -6,9 +6,11 @@
     "clarifai": "^2.9.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-notification-alert": "0.0.12",
     "react-particles-js": "^2.6.0",
     "react-scripts": "3.0.0",
     "react-tilt": "^0.1.4",
+    "reactstrap": "^8.0.0",
     "tachyons": "^4.11.1"
   },
   "scripts": {
@@ -33,4 +35,3 @@
     ]
   }
 }
-

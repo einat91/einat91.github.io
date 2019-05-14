@@ -1,6 +1,12 @@
 .form {
-    width: 700px;
-    background: #a1a7a8;
-    border: dotted white 1px;
+    width: 750px;
+    height: 100px;
+    background: rgb(255,124,216);
+    background: -moz-linear-gradient(left,  rgba(255,124,216,1) 2%, rgba(252,236,252,1) 2%, rgba(255,124,216,1) 2%, rgba(255,124,216,1) 4%, rgba(253,137,215,1) 54%, rgba(251,166,225,1) 94%);
+    background: -webkit-linear-gradient(left,  rgba(255,124,216,1) 2%,rgba(252,236,252,1) 2%,rgba(255,124,216,1) 2%,rgba(255,124,216,1) 4%,rgba(253,137,215,1) 54%,rgba(251,166,225,1) 94%);
+    background: linear-gradient(to right,  rgba(255,124,216,1) 2%,rgba(252,236,252,1) 2%,rgba(255,124,216,1) 2%,rgba(255,124,216,1) 4%,rgba(253,137,215,1) 54%,rgba(251,166,225,1) 94%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7cd8', endColorstr='#fba6e1',GradientType=1 );
+                             
+    border: solid white 1px;
     margin: 30px;
 }
