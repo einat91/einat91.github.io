@@ -6,13 +6,12 @@ const Rank = ({name, entries}) => {
         <div className='white f3'>
         {`${name}, your current entry count is`}        
         </div>
-        <div className='white f1'>
+        <div className='white f2'>
         {`#${entries}`}        
         </div>
 
        </div>
-    )
+    );
 }
-
 
 export default Rank;

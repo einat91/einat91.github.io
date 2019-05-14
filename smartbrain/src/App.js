@@ -35,23 +35,11 @@ const initialState = {
     joined: ''
   }
 }
+
 class App extends Component {
   constructor() {
     super();
-    this.state = {
-      input: '',
-      imageUrl: '',
-      box: {},
-      route: 'signin',
-      isSignedIn: false,
-      user: {
-        id: '',
-        name: '',
-        email: '',
-        entries: 0,
-        joined: ''
-      }
-    }
+    this.state = initialState;
   }
 
   loadUser = (data) => {
@@ -88,14 +76,15 @@ class App extends Component {
   }
 
   onButtonSubmit = () => {
-    this.setState({ imageUrl: this.state.input })
-    fetch('http://localhost:3000/imageUrl', {
+    this.setState({ imageUrl: this.state.input });
+    fetch('http://localhost:3000/imageurl', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         input: this.state.input
       })
     })
+      .then(response => response.json())
       .then(response => {
         if (response) {
           fetch('http://localhost:3000/image', {
@@ -106,15 +95,12 @@ class App extends Component {
             })
           })
             .then(response => response.json())
-            .then(response => response.json())
             .then(count => {
-              this.setState(
-                Object.assign(this.state.user,
-                  { entries: count }))
+              this.setState(Object.assign(this.state.user, { entries: count }))
             })
-            .catch(console.log('error'));
-        }
+            .catch(console.log)
 
+        }
         this.displayFaceBox(this.calculateFaceLocation(response))
       })
       .catch(err => console.log(err));
@@ -148,7 +134,7 @@ class App extends Component {
             <FaceRecognition box={box} imageUrl={imageUrl} />
           </div>
           : (
-            this.state.route === 'signin'
+            route === 'signin'
               ? <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
               : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
           )
