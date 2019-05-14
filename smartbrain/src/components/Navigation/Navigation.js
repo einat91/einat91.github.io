@@ -12,6 +12,7 @@ const Navigation = ({ onRouteChange, isSignedIn }) => {
     } else {
         return (
             <nav style={{ display: 'flex', justifyContent: 'flex-end' }}>
+              <p className='f4 link din grow black fa-italic pa3'>  Smart Brain </p>
                 <p onClick={() => onRouteChange('signin')} className='f4 link din white fa-italic pa3 pointer underline-hover'> Sign In </p>
                 <p onClick={() => onRouteChange('register')} className='f4 link din white fa-italic pa3 pointer underline-hover'> Register </p>
             </nav>
