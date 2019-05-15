@@ -8,7 +8,7 @@ const ImageLinkForm = ({ onInputChange, onButtonSumbit }) => {
                 {'Face Recognition App'}
             </p>
             <p className='f5'>
-                {'How does it work? simply copy and paste here a link to your favorite online photo. Try it!'}
+                {'How does it work? simply copy and paste here a link of your favorite online photo. Try it!'}
              </p>
              <p className ='f6 bold'>  
                 {'Please copy the actual link of the photo and not the website'}
