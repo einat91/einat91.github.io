@@ -4,8 +4,14 @@ import './ImageLinkForm.css'
 const ImageLinkForm = ({ onInputChange, onButtonSumbit }) => {
     return (
         <div>
-            <p className='f4'>
-                {'This Magic Brain will detect faces in your pictures. Give it a try'}
+            <p className='center f4'>
+                {'Face Recognition App'}
+            </p>
+            <p className='f5'>
+                {'How does it work? simply copy and paste here a link to your favorite online photo. Try it!'}
+             </p>
+             <p className ='f6 bold'>  
+                {'Please copy the actual link of the photo and not the website'}
             </p>
             <div className='center'>
                 <div className='form center pa4 br3 shadow-5'>
