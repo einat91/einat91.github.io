@@ -5,7 +5,7 @@ const Weather = props => (
 		{
 			props.city && props.country && props.icon && <p className="location"> 
 	 		<span className="weather__value"> {props.city}, {props.country}</span>
-			 <img className="weatherIcon" src={`http://openweathermap.org/img/w/${props.icon}.png`} alt="icon" />
+			 <img className="weatherIcon" src={`https://openweathermap.org/img/w/${props.icon}.png`} alt="icon" />
 			</p>
 		}
 		{
