@@ -29,18 +29,31 @@ class App extends React.Component {
     const city = e.target.elements.city.value;
     const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
     const data = await api_call.json();
-    if (city) {
-      this.setState({
-        temperature: data.main.temp,
-        city: data.name,
-        country: data.sys.country,
-        icon: data.weather[0].icon,
-        description: data.weather[0].description,
-        humidity: data.main.humidity,
-        windspeed: data.wind.speed,
-        error: ""
-      });
-    } else {
+    try {
+      if (city) {
+        this.setState({
+          temperature: data.main.temp,
+          city: data.name,
+          country: data.sys.country,
+          icon: data.weather[0].icon,
+          description: data.weather[0].description,
+          humidity: data.main.humidity,
+          windspeed: data.wind.speed,
+          error: ""
+        });
+      } else {
+        this.setState({
+          temperature: undefined,
+          city: undefined,
+          country: undefined,
+          icon: undefined,
+          description: undefined,
+          humidity: undefined,
+          windspeed: undefined,
+          error: "Please enter a valid city name"
+        });
+      }
+    } catch (error) {
       this.setState({
         temperature: undefined,
         city: undefined,
@@ -49,7 +62,7 @@ class App extends React.Component {
         description: undefined,
         humidity: undefined,
         windspeed: undefined,
-        error: "Please enter a valid city name"
+        error: "City name doesn't exist 😭"
       });
     }
   }
