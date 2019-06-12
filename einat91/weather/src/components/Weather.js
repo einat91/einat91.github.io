@@ -3,9 +3,9 @@ import React from "react";
 const Weather = props => (
 	<div className="weather__info">
 		{
-			props.city && props.country && props.icon && <p className="location"> 
-	 		<span className="weather__value"> {props.city}, {props.country}</span>
-			 <img className="weatherIcon" src={`https://openweathermap.org/img/w/${props.icon}.png`} alt="icon" />
+			props.city && props.country && props.icon && <p className="location">
+				<span className="weather__value"> {props.city}, {props.country}</span>
+				<img className="weatherIcon" src={`https://openweathermap.org/img/w/${props.icon}.png`} alt="icon" />
 			</p>
 		}
 		{
