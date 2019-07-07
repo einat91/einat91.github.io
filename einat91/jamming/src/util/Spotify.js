@@ -1,5 +1,5 @@
 const clientId = '3649dbca606a423ea621b98dc1d928a4';
-const redirectUri = 'https://git.heroku.com/einat-jamming.git/';
+const redirectUri = 'https://jamming-einat.herokuapp.com/';
 let accessToken;
 
 const Spotify = {
