@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import BusinessList from './Components/BusinessList/BusinesList';
+import BusinessList from './Components/BusinessList/BusinessList';
 import SearchBar from './Components/SearchBar/SearchBar';
 import Yelp from './util/Yelp';
 
@@ -33,6 +33,4 @@ class App extends React.Component {
   }
 }
 
-
 export default App;
-

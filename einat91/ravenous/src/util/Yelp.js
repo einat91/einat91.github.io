@@ -8,13 +8,22 @@ const Yelp = {
             headers: {
                 Authorization: `Bearer ${apiKey}`
             }
+        }).catch(response => {
+            if (response.status === 400) {
+                throw new Error('Error! Valid input is required');
+                // return fetch(`${fetchAddress}?term=${term}&location=${location}&sort_by=${sortBy}`, {
+                //   headers: {
+                //     Authorization: `Bearer ${apiKey}`
+                //}
+                //})
+            }
         })
             .then(response => {
                 return response.json();
             }).then(jsonResponse => {
                 if (jsonResponse) {
                     if (jsonResponse.businesses) {
-                        return jsonResponse.businesses.map((business) => ({
+                        return jsonResponse.businesses.map(business => ({
                             id: business.id,
                             imageSrc: business.image_url,
                             name: business.name,
@@ -24,26 +33,14 @@ const Yelp = {
                             zipCode: business.location.zip_code,
                             category: business.categories[0].title,
                             rating: business.rating,
-                            reviewCount: business.review_count
+                            reviewCount: business.review_count,
+
                         }));
                     }
                 }
             })
 
-            .catch(response => {
-                if (response.status === 400) {
-                    alert('Error! Valid input is required');
-                   // return fetch(`${fetchAddress}?term=${term}&location=${location}&sort_by=${sortBy}`, {
-                     //   headers: {
-                       //     Authorization: `Bearer ${apiKey}`
-                        //}
-                    //})
-                }
-            })
     }
 }
-
-
-
 
 export default Yelp;
