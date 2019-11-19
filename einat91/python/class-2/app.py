@@ -110,4 +110,20 @@
 # x = dict(['pork, 25.3], ['beef': 33.8], ['chicken': 22.7])
 # x = dict(pork = 25.3, beef = 33.8, chicken = 22.7)
 
+# Basic dict operations:
+# x['beef'] = 25.2: Adds or changes an item in dict x
+# del x['beef']: Removes an item from dict x
+# len(x): Gets length of dict x
+# item in x, item not in x: Checks membership in x (only looks in keys, not values)
+# x.clear(): Deletes all items from dict x
+# del x: Deletes dict x
+
+# Accessing keys and values in a dict:
+# x.keys(): Returns list of keys in x
+# x.values(): Returns list of values in x
+# x.items(): Returns list of key-value tuple pairs in x
+# itme in x.values(): Tests membership in x: returns boolean
+
+
+
 
