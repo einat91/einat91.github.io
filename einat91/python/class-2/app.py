@@ -130,6 +130,7 @@
 # for k, v in x.items(): (Iterates key/value pairs)
 #    print(k,v)
 
+# Entries in a dict are in random order
 
 
 
