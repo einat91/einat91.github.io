@@ -124,6 +124,17 @@
 # x.items(): Returns list of key-value tuple pairs in x
 # itme in x.values(): Tests membership in x: returns boolean
 
+# Iterating a dict:
+# for key in x: (Iterates keys)
+#   print(key, x[key])
+# for k, v in x.items(): (Iterates key/value pairs)
+#    print(k,v)
+
+
+
+
+
+
 
 
 
