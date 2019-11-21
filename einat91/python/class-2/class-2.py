@@ -132,10 +132,46 @@
 
 # Entries in a dict are in random order
 
+# Nested List:
+three_d_list = []
+num = 10
+for i in range(3):
+    current_column_list = []
+    for j in range(4):
+        current_depth_list = []
+        for k in range(5):
+            current_depth_list.append(num)
+            num += 10
+        current_column_list.append(current_depth_list)
+    three_d_list.append(current_column_list)
 
+print(three_d_list)
+print(three_d_list[2][3][3:4])
+print(three_d_list[2][3][3])
+print(three_d_list[slice(None, 1)])
+print(three_d_list[:1])
+print(three_d_list[1][1][::-1])
 
+# Be careful: some slicing result in unexcpected behavior
+#a[start:stop]  # items start through stop-1
+#a[start:]      # items start through the rest of the array
+#a[:stop]       # items from the beginning through stop-1
+#a[:]           # a copy of the whole array
+#a[-1]    # last item in the array
+#a[-2:]   # last two items in the array
+#a[:-2]   # everything except the last two items
+#a[::-1]    # all items in the array, reversed
+#a[1::-1]   # the first two items, reversed
+#a[:-3:-1]  # the last two items, reversed
+#a[-3::-1]  # everything except the last two items, reversed
+#a[slice(start, stop, step)] == a[start:stop:step]
 
+# Initializing the list:
+# List1 = [0] *list_length
+# List1 = [""] *list_length
+# List1 = [None] *list_length
+# List1[i] = val: Assigning it
 
+# Excercises
 
-
-
+# import sys.
