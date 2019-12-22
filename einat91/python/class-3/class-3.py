@@ -1,4 +1,4 @@
-# import os
+import os
 # OS.func1(...)
 # from my_module import my_function1, my_function2
 # myfunction2(...)
@@ -10,7 +10,8 @@
 # They are useful for validating user input, to protect the system/website from a hacker attack.
 # (SQL Injection/ HTML Injection).
 # They also check that the input is of the expected type and can be used in the program.
-# Regular expressions can be used for automatic "Find" or "Find/Search" operations in a script which works with text, for example a text-parsing script.
+# Regular expressions can be used for automatic "Find" or "Find/Search" operations in a script which works with text,
+# for example a text-parsing script.
 # Modules are Python scripts (.py extensions), they can be run from other script, and/or run others.
 
 # Import Modules
@@ -98,6 +99,7 @@ print(Lib.glob.escape)
 
 # Function parameters with Default Values
 
+
 def func_append(a, list1=[]):
     list1.append(a)
     print(list1)
@@ -115,5 +117,64 @@ def func_append(a, list1=None):
 
 # Regular Expressions (Regexs)
 
+# 1. Text files (human readable)
+    # Plain text
+    # XML
+    # JSON
+    # Source Code
 
-#
+# 2. Binary files:
+    # Compiled code
+    # App data
+    # Media files
+    # ~ images
+    # ~ audio
+    # ~ video
+
+
+# reading a file:
+f = open("guido_bio.txt")
+text = f.read()
+f.close()
+print(text)
+
+# safer way for reading:
+
+with open("guido_bio.txt") as fobj:
+    bio = fobj.read()  # no need to close the file
+    print(bio)
+
+# if file is not existed:
+
+try:
+    with open("example.txt") as f:
+        text = f.read()
+except FileNotFoundError:
+    text = None
+
+print(text)  # None
+
+# writing a file:
+oceans = ['Pacific', 'Atlantic', 'Indian', 'Southern', 'Arctic']
+with open("oceans.txt", "w") as f:
+    for ocean in oceans:
+        f.write(ocean)
+        f.write("\n")
+    # if the file doesn't exists, it will be created.
+    # if the file is existed, it will be overwritten.
+    # it automatically closes the file
+
+# another way for writing
+oceans = ['Pacific', 'Atlantic', 'Indian', 'Southern', 'Arctic']
+with open("oceans.txt", "w") as f:
+    for ocean in oceans:
+        print(ocean, file=f)
+
+# writing without overwriting
+oceans = ['Pacific', 'Atlantic', 'Indian', 'Southern', 'Arctic']
+with open("oceans.txt", "a") as f:
+    print(23*"=", file=f)
+    print("These are the 5 oceans.", file=f)
+# a as append
+
+
